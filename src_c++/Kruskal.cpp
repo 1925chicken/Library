@@ -1,4 +1,3 @@
-#include<algorithm>
 template <typename T>
 class UnionFind
 {
