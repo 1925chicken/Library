@@ -6,13 +6,13 @@ public:
     UnionFind(T n) : par(n, -1) {}
     void init(T n)
     {
-        for (ll i = 0; i < n; i++)
+        for (i64 i = 0; i < n; i++)
         {
             par[i] = -1;
         }
     }
 
-    ll root(T x)
+    i64 root(T x)
     {
         if (par[x] < 0)
             return x;
@@ -38,7 +38,7 @@ public:
         return true;
     }
 
-    ll size(T x)
+    i64 size(T x)
     {
         return -par[root(x)];
     }

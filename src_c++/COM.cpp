@@ -1,15 +1,15 @@
 
-const int MAX = 10000000;
-const int MOD = 1000000007;
+const i64 MAX = 10000000;
+const i64 MOD = 1000000007;
 
-long long fac[MAX], finv[MAX], inv[MAX];
+i64 fac[MAX], finv[MAX], inv[MAX];
 
 void COMinit()
 {
     fac[0] = fac[1] = 1;
     finv[0] = finv[1] = 1;
     inv[1] = 1;
-    for (int i = 2; i < MAX; i++)
+    for (i64 i = 2; i < MAX; i++)
     {
         fac[i] = fac[i - 1] * i % MOD;
         inv[i] = MOD - inv[MOD % i] * (MOD / i) % MOD;
@@ -17,7 +17,7 @@ void COMinit()
     }
 }
 
-long long COM(int n, int k)
+i64 COM(i64 n, i64 k)
 {
     if (n < k)
         return 0;
