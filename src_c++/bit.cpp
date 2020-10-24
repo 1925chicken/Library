@@ -1,58 +1,28 @@
-struct node{
-    int val;
-    node *lch,*rch;
-};
-
-node *insert(node *p, int x){
-    if(p == NULL){
-        node * q = new node;
-        q->val = x;
-        q->lch = q->rch = NULL;
-        return q;
+template<class T>
+class BIT {
+public:
+    i64 n;
+    vector<i64> seg;
+    BIT(i64 n) : N(N){
+        seg.resize(N + 1);
+        fill_n(begin(seg),N + 1,0);
     }
-    else
-    {
-        if(x < p->val) p -> lch = insert(p->lch, x);
-        else
-            p->lch = insert(p->rch,x);
-        return p;
+    void add(i64 i, T x){
+        ++i;
+        while(i <= N) {
+            seg[i] += x;
+            i += i & (-i);
+        }
     }
-
-}
-
-
-bool find(node *p, int x){
-    if(p == NULL) return false;
-    else if (x == p->val) return true;
-    else if(x < p->val) return find(p->lch,x);
-    else return find(p->rch,x);
-}
-
-node *remove(node *p, int x){
-    if(p == NULL) return NULL;
-    else if(x < p->val) p->lch = remove(p->lch, x);
-    else if(x > p->val) p->rch = remove(p->rch, x);
-    else if(p-> lch ==NULL) {
-        node *q = p ->lch;
-        delete p;
-        return q;
+    T sum(i64 i) {
+        T s = 0;
+        while(i > 0) {
+            s += seg[i];
+            i -= i & (-i);
+        }
+        return s;
     }
-    else if(p->lch->rch == NULL){
-        node *q = p->lch;
-        q->rch = p->rch;
-        delete p;
-        return q;
+    T sum(i64 a, i64 b) {
+        return sum(b) - sum(a);
     }
-    else
-    {
-        node *q;
-        for(q = p->lch; q->rch->rch != NULL; q = q->rch);
-        node *r = q->rch;
-        q->rch = r->lch;
-        r->lch = p->lch;
-        r->rch = p->rch;
-        delete p;
-        return r;
-    }
-    return p;
 };
