@@ -22,7 +22,7 @@ public:
         }
         return s;
     }
-    T sum(i64 a, i64 b) {
+    T segsum(i64 a, i64 b) {
         return sum(b) - sum(a);
     }
 };
