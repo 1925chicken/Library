@@ -1,4 +1,4 @@
-template<class T>
+template <typename T>
 class BIT {
 public:
     i64 n;
@@ -14,14 +14,16 @@ public:
             i += i & (-i);
         }
     }
+    //sum of [0,i);
     T sum(i64 i) {
-        T s = 0;
+        T s{0};
         while(i > 0) {
             s += seg[i];
             i -= i & (-i);
         }
         return s;
     }
+    //sum of [a,b);
     T segsum(i64 a, i64 b) {
         return sum(b) - sum(a);
     }
