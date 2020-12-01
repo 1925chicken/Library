@@ -63,4 +63,5 @@ T kruskal(vector<edge<T>> &edges,i64 V){
             res += e.cost;
         }
     }
+    return res;
 }
