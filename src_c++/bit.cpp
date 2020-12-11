@@ -1,9 +1,9 @@
 template <typename T>
 class BIT {
 public:
-    i64 n;
+    u64 n;
     vector<i64> seg;
-    BIT(i64 n) : n(n){
+    BIT(u64 n) : n(n){
         seg.resize(n + 1);
         fill_n(begin(seg),n + 1,0);
     }

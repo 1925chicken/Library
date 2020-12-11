@@ -10,12 +10,17 @@
 using namespace std;
 using i32 = int_fast32_t;
 using i64 = int_fast64_t;
-using usize = uint_fast64_t;
-#define rep(i, n) for (usize i = 0; i < (usize)(n); i++)
+using usize = size_t;
+using u32 = uint_fast32_t;
+using u64 = uint_fast64_t;
+template<typename T>
+using vec = vector<T>;
+#define rep(i, n) for (i64 i = 0; i < (i64)(n); ++i)
 #define all(a) (a).begin(),(a).end()
 #define rall(a) (a).rbegin(),(a).rend()
 using P = pair<i64,i64>;
-
+void solve(){
+}
 int main(){
     ios::sync_with_stdio(false);
     std::cin.tie(nullptr);

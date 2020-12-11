@@ -1,6 +1,6 @@
-set<i64> enum_divisors(i64 n){
-    set<i64> res;
-    for(i64 i = 1; i <= sqrt(n); i++){
+set<u64> enum_divisors(u64 n){
+    set<u64> res;
+    for(u64 i = 1; i <= sqrt(n); i++){
         if(n % i == 0){
             res.insert(i);
             if(n / i != i)
@@ -10,9 +10,9 @@ set<i64> enum_divisors(i64 n){
     return res;
 }
 
-vector<i64> enum_divisors(i64 N) {
-    vector<i64> res;
-    for (i64 i = 1; i * i <= N; ++i) {
+vector<u64> enum_divisors(u64 N) {
+    vector<u64> res;
+    for (u64 i = 1; i * i <= N; ++i) {
         if (N % i == 0) {
             res.push_back(i);
             if (N/i != i) res.push_back(N/i);
@@ -22,13 +22,13 @@ vector<i64> enum_divisors(i64 N) {
     return res;
 }
 
-vector<pair<i64,i64>> factrize(i64 n)
+vector<P> factrize(u64 n)
 {
-    vector<pair<i64, i64>> res;
-    for (i64 i = 2; i <= sqrtl(n); i++)
+    vector<pair<u64, u64>> res;
+    for (u64 i = 2; i <= sqrtl(n); i++)
     {
-        i64 k = i;
-        i64 cnt = 0;
+        u64 k = i;
+        u64 cnt = 0;
         while (n % k == 0)
         {
             n /= k;
@@ -42,13 +42,13 @@ vector<pair<i64,i64>> factrize(i64 n)
     }
     return res;
 }
-set<i64> factrize(i64 n)
+set<u64> factrize(u64 n)
 {
-    set<i64> res;
-    for (i64 i = 2; i <= sqrtl(n); i++)
+    set<u64> res;
+    for (u64 i = 2; i <= sqrtl(n); i++)
     {
-        i64 k = i;
-        i64 cnt = 0;
+        u64 k = i;
+        u64 cnt = 0;
         while (n % k == 0)
         {
             n /= k;

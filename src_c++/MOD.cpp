@@ -1,4 +1,3 @@
-using i64 = int_fast64_t;
 constexpr i64 MAX = 10000000;
 constexpr i64 MOD = 1000000007;
 i64 fac[MAX], finv[MAX], inv[MAX];
