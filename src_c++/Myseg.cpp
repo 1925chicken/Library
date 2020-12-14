@@ -7,11 +7,9 @@
  */
 template<typename T>
 T e(){
-    return (u64)(2147483647);
 }
 template<typename T>
 T op(T a,T b) {
-    return min(a,b);
 }
 template<class T,T (*op)(T,T),T (*e)()>
 class segtree{
