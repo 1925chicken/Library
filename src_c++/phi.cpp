@@ -1,0 +1,11 @@
+i64 phi(i64 n){
+    i64 ret = n;
+    for(i64 i = 2; i * i <= n; i++){
+        if(n % i == 0){
+            ret -= ret / i;
+            while(n % i == 0)n /= i;
+        }
+    }
+    if(n > 1)ret -= ret / n;
+    return ret;
+}
