@@ -20,7 +20,7 @@ public:
 
     void build(const std::vector<std::vector<uint_fast64_t>> &g, uint_fast64_t v, int_fast64_t par, uint_fast64_t d) {
         begin[v] = k++;
-        //depth[k++] = d;
+        depth[k++] = d;
         euler_tour.emplace_back(v);
         for (auto to :g[v]) {
             if (to == par)continue;
