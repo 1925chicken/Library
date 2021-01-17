@@ -85,7 +85,7 @@ public:
       return 0;
     return fac[n] * (finv[k] * finv[n - k] % modulus) % modulus;
   }
-  constexpr modcal<1000000007> modpow(const modcal<1000000007> &a, i64 n)
+  constexpr modpow(const modcal<1000000007> &a, i64 n)
   {
     if (n == 0)
       return 1;
