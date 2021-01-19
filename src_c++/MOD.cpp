@@ -120,6 +120,10 @@ public:
         if (k < 0 || k > n)return 0;
         return fac[n] * inv[k] * inv[n - k];
     }
+    modc permutation(i64 n,i64 k){
+        if(k < 0 || k > n)return 0;
+        return combination(n,k) * fac[k];
+    }
 };
 
 int main() {
