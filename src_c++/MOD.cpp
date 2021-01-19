@@ -1,13 +1,6 @@
-#include<iostream>
-#include<cstdint>
-#include<vector>
-
-using namespace std;
-using i64 = int_fast64_t;
-constexpr i64 MAX = 10000000;
 constexpr i64 MOD = 1000000007;
 
-//i64 finv[MAX],fac[MAX],inv[MAX];
+
 template<i64 modulus>
 class modcal {
 public:
@@ -68,26 +61,6 @@ public:
         return *this;
     }
 
-    /*void COMninit()
-    {
-        fac[0] = fac[1] = 1;
-        finv[0] = finv[1] = 1;
-        inv[1] = 1;
-        for (int i = 2; i < MAX; i++)
-        {
-            fac[i] = fac[i - 1] * i % modulus;
-            inv[i] = MOD - inv[modulus % i] * (modulus / i) % modulus;
-            finv[i] = finv[i - 1] * inv[i] % modulus;
-        }
-    }
-    i64 COMn(i64 n, i64 k)
-    {
-        if (n < k)
-            return 0;
-        if (n < 0 || k < 0)
-            return 0;
-        return fac[n] * (finv[k] * finv[n - k] % modulus) % modulus;
-    }*/
     constexpr modcal<MOD> modpow(const modcal<MOD> &a, i64 n) {
         if (n == 0)
             return 1;
@@ -97,15 +70,13 @@ public:
             t = t * a;
         return t;
     }
-    /*constexpr modcal<MOD> modinv(const modcal<MOD> &a){
 
-    }*/
 };
 
 using modc = modcal<MOD>;
 
 class com {
-    vector<modc> fac, inv;
+    vector <modc> fac, inv;
     i64 n;
 public:
     com(i64 N) : fac(N + 1), inv(N + 1), n(N) {
@@ -120,13 +91,9 @@ public:
         if (k < 0 || k > n)return 0;
         return fac[n] * inv[k] * inv[n - k];
     }
-    modc permutation(i64 n,i64 k){
-        if(k < 0 || k > n)return 0;
-        return combination(n,k) * fac[k];
+
+    modc permutation(i64 n, i64 k) {
+        if (k < 0 || k > n)return 0;
+        return combination(n, k) * fac[k];
     }
 };
-
-int main() {
-    com ans(1000);
-    cout << ans.combination(100, 1).a << endl;
-}
