@@ -13,11 +13,15 @@ using i64 = int_fast64_t;
 using usize = size_t;
 using u32 = uint_fast32_t;
 using u64 = uint_fast64_t;
+using i128 = __int128_t;
+using u128 = __uint128_t;
+using ld = long double;
 template<typename T>
 using vec = vector<T>;
 #define rep(i, n) for (i64 i = 0; i < (i64)(n); ++i)
 #define all(a) (a).begin(),(a).end()
 #define rall(a) (a).rbegin(),(a).rend()
+#define len(hoge) (i64)((hoge).size())
 using P = pair<i64,i64>;
 void solve(){
 }
