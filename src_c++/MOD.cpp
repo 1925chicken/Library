@@ -48,7 +48,10 @@ public:
         a = a * rhs.a % modulus;
         return *this;
     }
-
+    /*ostream &operator<<(ostream &os, const modcal<MOD> I){
+        os << I.a;
+        return os;
+    }*/
     constexpr modcal &operator/=(modcal rhs) noexcept {
         i64 exp = modulus - 2;
         while (exp) {
@@ -74,7 +77,6 @@ public:
 };
 
 using modc = modcal<MOD>;
-
 class com {
     vector <modc> fac, inv;
     i64 n;
@@ -97,3 +99,13 @@ public:
         return combination(n, k) * fac[k];
     }
 };
+istream &operator >> (istream &is,modc &x){
+    i64 t;
+    is >> t;
+    x = t;
+    return is;
+}
+ostream &operator << (ostream &os,const modc &x){
+    os << x.a;
+    return os;
+}

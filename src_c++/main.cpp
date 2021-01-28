@@ -23,9 +23,15 @@ using vec = vector<T>;
 #define rall(a) (a).rbegin(),(a).rend()
 #define len(hoge) (i64)((hoge).size())
 using P = pair<i64,i64>;
+template<class T, class S> ostream &operator<<(ostream &os, const pair<T,S> &p){
+    os << p.first << " " << p.second;
+    return os;
+}
 void solve(){
 }
 int main(){
     ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
+    P a = {0,0};
+    cout << a << endl;
 }
