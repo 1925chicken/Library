@@ -1,4 +1,4 @@
-void warshall_froyd(std::vector<std::vector<int_fast64_t>> dist){//隣接行列を使う
+void warshall_froyd(std::vector<std::vector<int_fast64_t>> &dist){//隣接行列を使う
     i64 n = dist.size();
     for(int_fast32_t k = 0; k < n; k++){
         for(int_fast32_t i = 0; i < n; i++){

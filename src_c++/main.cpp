@@ -32,6 +32,4 @@ void solve(){
 int main(){
     ios::sync_with_stdio(false);
     std::cin.tie(nullptr);
-    P a = {0,0};
-    cout << a << endl;
 }
