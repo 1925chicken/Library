@@ -58,8 +58,8 @@ T kruskal(vector<edge<T>> &edges,i64 V){
     UnionFind uft(V);
     T res = 0;
     for(edge<T> &e : edges){
-        if(!(uft.same(e.a,e.b))){
-            uft.merge(e.a,e.b);
+        if(!(uft.same(e.from,e.to))){
+            uft.merge(e.from,e.to);
             res += e.cost;
         }
     }
