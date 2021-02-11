@@ -5,8 +5,12 @@
 #include<cstdint>
 #include<cstddef>
 #include<vector>
-//#include<atcoder/all>
-//using namespace atcoder;
+#if __has_include(<atcoder/all>)
+#include<atcoder/all>
+using namespace atcoder;
+#endif
+//#include<boost/multiprecision/cpp_int.hpp>
+//namespace mp = boost::multiprecision;
 using namespace std;
 using i32 = int_fast32_t;
 using i64 = int_fast64_t;
